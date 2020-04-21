@@ -25,6 +25,41 @@ def fcfs():
 					i["wt"]=i["tat"]-i["bt"]
 					executed+=1
 	p=sorted(p, key = lambda i: i['id'])
-	return json.dumps(p)   
+	return json.dumps(p)
+
+@app.route('/sjf',methods=['POST'])
+def sjf():
+	p=request.json['processes']
+	for i in p:
+		i["e"]=False
+	#SJF LOGIC
+	return json.dumps(p)
+
+
+@app.route('/srtn',methods=['POST'])
+def srtn():
+	p=request.json['processes']
+	for i in p:
+		i["e"]=False
+	#SRTN LOGIC
+	return json.dumps(p)
+
+
+@app.route('/priority',methods=['POST'])
+def priority():
+	p=request.json['processes']
+	for i in p:
+		i["e"]=False
+	#priority LOGIC
+	return json.dumps(p)
+
+
+@app.route('/roundrobin',methods=['POST'])
+def roundrobin():
+	p=request.json['processes']
+	for i in p:
+		i["e"]=False
+	#RR LOGIC
+	return json.dumps(p)
 
 
